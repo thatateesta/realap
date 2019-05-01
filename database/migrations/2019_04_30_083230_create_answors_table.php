@@ -14,11 +14,11 @@ class CreateAnsworsTable extends Migration
     public function up()
     {
         Schema::create('answors', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->BigIncrements('id');
             $table->text('body');
-            $table->integer('quatiom_id')->unsigned();
             $table->integer('user_id');
-            $table->foreign('quation_id')->references('id')->on('quations')->onDelete('cascade');
+            $table->bigInteger('quation_id')->unsigned()->index();
+         $table->foreign('quation_id')->references('id')->on('quations')->onDelete('cascade');
 
             $table->timestamps();
         });

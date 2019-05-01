@@ -14,7 +14,7 @@ class CreateQuationsTable extends Migration
     public function up()
     {
         Schema::create('quations', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->BigIncrements('id');
             $table->string('title');
             $table->string('slug');
             $table->text('body');
